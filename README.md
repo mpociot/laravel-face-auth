@@ -61,6 +61,8 @@ class User extends Authenticatable implements FaceAuthenticatable
 
 Your login form now needs a `photo` field (the name can be configured) - this field should contain a base64 representation of the image, the user uses to log in.
 
+> If you want a simple way to capture the user image from the webcam, take a look at the [vue-webcam](https://github.com/smronju/vue-webcam) Vue.js component.
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
