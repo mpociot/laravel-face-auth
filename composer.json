@@ -1,0 +1,44 @@
+{
+    "name": "mpociot/laravel-face-auth",
+    "description": "Use Microsoft Face API as a authentication method in your Laravel app.",
+    "keywords": [
+        "mpociot",
+        "laravel-face-auth"
+    ],
+    "homepage": "https://github.com/mpociot/laravel-face-auth",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcel Pociot",
+            "email": "m.pociot@gmail.com",
+            "homepage": "https://marcelpociot.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.0",
+        "intervention/image": "^2.3",
+        "mockery/mockery": "^0.9.9"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.4",
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mpociot\\FaceAuth\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mpociot\\FaceAuth\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
