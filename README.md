@@ -1,4 +1,4 @@
-# Laravel face authentication
+# Laravel Face authentication
 
 This package uses Microsoft's cognitive API to identify faces instead of passwords for your Laravel application.
 
@@ -10,8 +10,6 @@ You can install the package via composer:
 ``` bash
 composer require mpociot/laravel-face-auth
 ```
-
-## Usage
 
 Add the service provider to your `config/app.php`:
 
@@ -36,7 +34,32 @@ php artisan vendor:publish --provider="Mpociot\FaceAuth\FaceAuthServiceProvider"
 ```
 Edit the newly published `config/faceauth.php` file and enter your [Face API key](https://www.microsoft.com/cognitive-services/en-us/face-api).
 
-Next, your `User` model needs to implement the `FaceAuthenticatable` interface, which this package provides.
+## Usage and authorization
+
+The face authentication works, by using a reference image of your user and matching it against a uploaded image upon login.
+So this pretty much is the same flow as comparing two password hashes.
+
+When you register your users, you need to make sure that you store a photo of the users face - this is basically his password.
+
+In order for this package, to find the user photo, your `User` model needs to implement the `FaceAuthenticatable` interface.
+
+This interface only has one single method, which is `public function getFaceAuthPhoto()`. This method needs to return the content of the user photo.
+
+Example:
+
+```php
+class User extends Authenticatable implements FaceAuthenticatable
+{
+
+	public function getFaceAuthPhoto()
+	{
+		return File::get(storage_path('facces').$this->id.'.png');
+	}
+
+}
+```
+
+Your login form now needs a `photo` field (the name can be configured) - this field should contain a base64 representation of the image, the user uses to log in.
 
 ## Changelog
 
