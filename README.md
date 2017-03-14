@@ -5,10 +5,10 @@ This package uses Microsoft's cognitive API to identify faces instead of passwor
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via Composer:
 
 ``` bash
-composer require mpociot/laravel-face-auth
+$ composer require mpociot/laravel-face-auth
 ```
 
 Add the service provider to your `config/app.php`:
@@ -30,7 +30,7 @@ In your `config/auth.php`, change the auth driver to `faceauth`:
 
 Publish the configuration:
 ``` bash
-php artisan vendor:publish --provider="Mpociot\FaceAuth\FaceAuthServiceProvider"
+$ php artisan vendor:publish --provider="Mpociot\FaceAuth\FaceAuthServiceProvider"
 ```
 Edit the newly published `config/faceauth.php` file and enter your [Face API key](https://www.microsoft.com/cognitive-services/en-us/face-api).
 
@@ -43,7 +43,7 @@ When you register your users, you need to make sure that you store a photo of th
 
 In order for this package, to find the user photo, your `User` model needs to implement the `FaceAuthenticatable` interface.
 
-This interface only has one single method, which is `public function getFaceAuthPhoto()`. This method needs to return the content of the user photo.
+This interface only has one single public method `getFaceAuthPhoto()`. This method needs to return the content of the user photo.
 
 Example:
 
@@ -51,11 +51,11 @@ Example:
 class User extends Authenticatable implements FaceAuthenticatable
 {
 
-	public function getFaceAuthPhoto()
-	{
-		return File::get(storage_path('facces').$this->id.'.png');
-	}
-
+    public function getFaceAuthPhoto()
+    {
+        return File::get(storage_path('facces') . $this->id . '.png');
+    }
+    
 }
 ```
 
