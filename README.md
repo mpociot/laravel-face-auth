@@ -3,6 +3,12 @@
 This package uses Microsoft's cognitive API to identify faces instead of passwords for your Laravel application.
 
 
+# Disclaimer
+> Any kind of Face Recognition, using the camera of the device as a form of Authentication is flawed.
+> You only need to hold a good photo in front of the camera to by pass it.
+> Using this for authentication is like shooting in your own foot and contributing for a more insecure web.
+
+
 ## Installation
 
 You can install the package via Composer:
