@@ -8,6 +8,7 @@ This package uses Microsoft's cognitive API to identify faces instead of passwor
 > You only need to hold a good photo in front of the camera to by pass it.
 > Using this for authentication is like shooting in your own foot and contributing for a more insecure web.
 
+Please **do not** use face recognition as an alternative for password authentication in a production system!
 
 ## Installation
 
