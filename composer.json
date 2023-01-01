@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^7.0 || ^8.0 || ^8.1",
         "guzzlehttp/guzzle": "^6.0",
         "intervention/image": "^2.3",
         "mockery/mockery": "^0.9.9"
